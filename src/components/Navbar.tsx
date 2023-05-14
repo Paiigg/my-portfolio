@@ -21,17 +21,16 @@ export default function Navbar() {
   interface itemProps {
     href?: string;
     text?: string;
-    className?: string;
   }
 
-  const Item = ({ href = "", text = "text", className }: itemProps) => (
-    <Link href={href} className={className}>
+  const Item = ({ href = "", text = "text" }: itemProps) => (
+    <Link href={href} className="hover:text-primary px-3 py-2">
       {text}
     </Link>
   );
 
   return (
-    <nav className="fixed w-full shadow-lg mx-auto bg-[#fff] ">
+    <nav className="fixed w-full shadow-lg mx-auto bg-[#fff] z-[100] ">
       <div className="flex justify-between items-center px-4 py-3 container  mx-auto">
         <div className="flex items-center space-x-6">
           <div className="flex items-center space-x-2">
@@ -44,21 +43,9 @@ export default function Navbar() {
             <p className="font-semibold">it's me</p>
           </div>
           <div className="hidden md:flex items-center space-x-2">
-            <Item
-              href="/"
-              text="home"
-              className="hover:text-primary  px-3 py-2"
-            />
-            <Item
-              href="/project"
-              text="project"
-              className="hover:text-primary px-3 py-2"
-            />
-            <Item
-              href="/contact"
-              text="contact"
-              className="hover:text-primary px-3 py-2"
-            />
+            <Item href="/" text="home" />
+            <Item href="/project" text="project" />
+            <Item href="/contact" text="contact" />
           </div>
         </div>
         <div className="flex items-center space-x-3">
@@ -101,9 +88,9 @@ export default function Navbar() {
             />
             <p className="font-semibold">it's me</p>
           </div>
-          <Item href="/" text="home" className="hover:text-primary" />
-          <Item href="#project" text="project" className="hover:text-primary" />
-          <Item href="/contact" text="contact" className="hover:text-primary" />
+          <Item href="/" text="home" />
+          <Item href="/project" text="project" />
+          <Item href="/contact" text="contact" />
         </div>
         <button className="rounded-full text-[#fff] bg-primary py-2 px-6">
           Download CV
